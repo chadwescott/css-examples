@@ -1,0 +1,52 @@
+body {
+  background-color: white;
+  text-align: center;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  position: relative;
+  display: inline-block;
+}
+
+h1::before,
+h1::after {
+  content: "";
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+}
+
+h1::before {
+  background-color: red;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -2;
+}
+
+h1::after {
+  height: 101%;
+  background-color: white;
+  left: -0.3em;
+  right: -0.3em;
+  z-index: -1;
+}
+
+p {
+  position: relative;
+}
+
+p.block-quote:before {
+  content: open-quote;
+}
+
+p.block-quote:after {
+  content: close-quote;
+}
+
+/*# sourceMappingURL=section-headings.css.map */
