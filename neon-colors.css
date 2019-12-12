@@ -1,38 +1,38 @@
 .red {
-    color: #ffd2d2;
-    text-shadow: 0 0 20px #ff005b;
+  color: #ffd2d2;
+  text-shadow: 0 0 20px #ff005b;
 }
 
 .red:after {
-    color: #ff005b;
+  color: #ff005b;
 }
 
 .red:before {
-    background: #fe3a80;
+  background: #fe3a80;
 }
 
 .green {
-    color: #d2ffd2;
-    text-shadow: 0 0 20px #00ff4c;
+  color: #d2ffd2;
+  text-shadow: 0 0 20px #00ff4c;
 }
 
 .green:after {
-    color: #00ff4c;
+  color: #00ff4c;
 }
 
 .green:before {
-    background: #3afe54;
+  background: #3afe54;
 }
 
 .blue {
-    color: #d2d2ff;
-    text-shadow: 0 0 20px #2600ff;
+  color: #d2d2ff;
+  text-shadow: 0 0 20px #2600ff;
 }
 
 .blue:after {
-    color: #2600ff;
+  color: #2600ff;
 }
 
 .blue:before {
-    background: #3ad0fe;
+  background: #3ad0fe;
 }

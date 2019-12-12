@@ -1,0 +1,78 @@
+$square-size: 400px;
+$square-color: red;
+$square-color-hover: rgba(255, 0, 0, .4);
+$line-length: 1.25em;
+$line-color: black;
+$body-color: whitesmoke;
+
+body {
+  background-color: $body-color;
+  color: $line-color;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 2em;
+}
+
+div {
+  margin: 0 auto;
+  &.square {
+    position: relative;
+    height: $square-size;
+    width: $square-size;
+    background-color: $square-color;
+    transition: opacity ease-out 250ms;
+
+    &:hover {
+      background-color: $square-color-hover;
+    }
+
+    &:hover .square-text {
+      opacity: 1.4;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: $line-length;
+      bottom: $line-length;
+      left: $line-length;
+      right: $line-length;
+      opacity: 1;
+      transition: transform ease-out 250ms;
+    }
+
+    &:before {
+      border-top: 1px solid $line-color;
+      border-bottom: 1px solid $line-color;
+      transform: scale(0, 1);
+    }
+
+    &:after {
+      border-left: 1px solid $line-color;
+      border-right: 1px solid $line-color;
+      transform: scale(1, 0);
+    }
+
+    &:hover:before {
+      transform: scale(1.05, 1);
+    }
+
+    &:hover:after {
+      transform: scale(1, 1.05);
+    }
+  }
+}
+
+.square-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $line-color;
+  opacity: 0;
+  transition: opacity ease-out 250ms;
+}

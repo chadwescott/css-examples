@@ -1,48 +1,48 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
 
 body {
-    background: #000;
-    font-family: 'Quicksand', sans-serif;
-    margin: 0;
-    padding: 0;
+  background: #000;
+  font-family: "Quicksand", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 div {
-    position: relative;
-    height: 150px;
-    margin: 0;
-    padding: 0;
+  position: relative;
+  height: 150px;
+  margin: 0;
+  padding: 0;
 }
 
 .neon {
-    color: #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    padding: 0 20px;
-    font-size: 6em;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0 20px;
+  font-size: 6em;
 }
 
 .neon:after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0 20px;
-    z-index: -1;
-    filter: blur(15px);
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 20px;
+  z-index: -1;
+  filter: blur(15px);
 }
 
 .neon:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
-    opacity: .5;
-    filter: blur(40px);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  opacity: 0.5;
+  filter: blur(40px);
 }
