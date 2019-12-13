@@ -31,7 +31,7 @@ body {
 
 .container {
   display: grid;
-  grid-gap: .2em;
+  grid-gap: 0.2em;
   grid-template-rows: 2em 5em auto 2em;
   grid-template-areas:
     "header"
@@ -44,13 +44,63 @@ body {
 @media (min-width: 800px) {
   .container {
     display: grid;
-    grid-gap: .2em;
+    grid-gap: 0.2em;
     grid-template-columns: 15em auto;
     grid-template-rows: 2em auto 2em;
     grid-template-areas:
       "header header"
       "side-nav content"
       "footer footer";
-    height: 100vh;
+    min-height: 100vh;
+  }
+}
+
+.content-container > div {
+  text-align: center;
+  padding: 0.5em;
+}
+
+.content1 {
+  grid-area: content1;
+  background-color: #ff80c0;
+}
+
+.content2 {
+  grid-area: content2;
+  background-color: #8080ff;
+}
+
+.content3 {
+  grid-area: content3;
+  background-color: #ff8040;
+}
+
+.content4 {
+  grid-area: content4;
+  background-color: #008000;
+  color: white;
+}
+
+.content-container {
+  display: grid;
+  grid-gap: 0.2em;
+  grid-template-rows: 20em 10em 15em 30em;
+  grid-template-areas:
+    "content1"
+    "content2"
+    "content3"
+    "content4";
+}
+
+@media (min-width: 800px) {
+  .content-container {
+    display: grid;
+    grid-gap: 0.2em;
+    grid-template-columns: 30em auto;
+    grid-template-rows: 20em auto 15em;
+    grid-template-areas:
+      "content1 content1 ."
+      "content2 content2 content2"
+      "content3 . content4";
   }
 }
