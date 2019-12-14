@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: gray;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: auto;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.image {
+  display: inline-block;
+  height: 300px;
+  width: 200px;
+  -webkit-transition: -webkit-transform 200ms ease-out;
+  transition: -webkit-transform 200ms ease-out;
+  transition: transform 200ms ease-out;
+  transition: transform 200ms ease-out, -webkit-transform 200ms ease-out;
+  -webkit-box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
+}
+
+.image:hover {
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+  -webkit-box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3);
+}
+
+.image2 {
+  background: url("/images/unicorn.jpg");
+  background-size: cover;
+}
+
+.image1 {
+  background: url("/images/unicorn.jpg"), url("/images/unicorn.jpg");
+  background-size: cover;
+  background-blend-mode: screen;
+}
+
+.image1:hover {
+  background: url("/images/unicorn.jpg"), purple;
+  background-size: cover;
+  background-blend-mode: screen;
+}
+
+.image3 {
+  background: url("/images/unicorn.jpg"), black;
+  background-size: cover;
+  background-blend-mode: luminosity;
+}
+
+.image3:hover {
+  background-blend-mode: unset;
+}
+/*# sourceMappingURL=blending-images.css.map */

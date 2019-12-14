@@ -1,0 +1,61 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: gray;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: auto;
+  transform: translate(-50%, -50%);
+}
+
+.image {
+  display: inline-block;
+  height: 300px;
+  width: 200px;
+  transition: transform 200ms ease-out;
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
+}
+
+.image:hover {
+  transform: scale(1.25);
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3);
+}
+
+.image2 {
+  background: url("/images/unicorn.jpg");
+  background-size: cover;
+}
+
+.image1 {
+  background: url("/images/unicorn.jpg"), url("/images/unicorn.jpg");
+  background-size: cover;
+  background-blend-mode: screen;
+}
+
+.image1:hover {
+  background: url("/images/unicorn.jpg"), purple;
+  background-size: cover;
+  background-blend-mode: screen;
+}
+
+.image3 {
+//   background: url("/images/unicorn.jpg"), linear-gradient(135deg, rgba(255, 255, 0, .5), rgba(255, 0, 0, 0.5)); //linear-gradient(rgba(255, 255, 0), rgba(255, 0, 255));
+  background: url("/images/unicorn.jpg"), black;
+  background-size: cover;
+  background-blend-mode: luminosity;
+//   background-blend-mode: screen;
+}
+
+.image3:hover {
+  background-blend-mode: unset;
+}
