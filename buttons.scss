@@ -16,26 +16,38 @@ body {
 }
 
 .button {
+  // remove Internet Explorer border and outline
+  border: none;
+  outline: none;
+
   all: unset;
   background-color: red;
   color: white;
   border-radius: 4px;
   padding: 0.5em 0.8em;
-  transition: all 200ms ease-in-out;
-  box-shadow: 4px 4px 8px 1px rgba(255, 0, 0, 0.4);
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+  transition-property: transform, box-shadow;
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
   cursor: pointer;
 
-  &:focus,
+  // remove Firefox inner border on focus
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px red;
+  }
+
   &:hover {
     background-color: firebrick;
-    box-shadow: 4px 4px 4px 0 rgba(180, 0, 0, 0.4);
+    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.2);
   }
 
   &:active {
-    // outline: 0.1em dashed rgba(0, 0, 0, 0.4);
-    // outline-offset: 0.3em;
     transform: scale(0.96);
     background-color: darkred;
-    box-shadow: 3px 3px 2px 0 rgba(150, 0, 0, 0.4);
+    box-shadow: 3px 3px 2px 0 rgba(0, 0, 0, 0.4);
   }
 }

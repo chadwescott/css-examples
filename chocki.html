@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cool Borders</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .red-box {
+            position: absolute;
+            top: -10px;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            border: solid 1px red;
+            border-radius: 4px;
+            z-index: -1;
+        }
+
+        .blue-box {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -10px;
+            right: -10px;
+            border: solid 1px blue;
+            border-radius: 4px;
+            z-index: -2;
+        }
+
+        .content  {
+            padding: 100px 50px;
+            border: solid 1px green;
+            background-color: #80ff80;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="red-box"></div>
+        <div class="blue-box"></div>
+        <div class="content">
+            Hello Chocki!
+        </div>
+    </div>
+</body>
+</html>
