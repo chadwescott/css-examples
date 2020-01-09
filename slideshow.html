@@ -10,6 +10,9 @@
 </head>
 
 <body>
+    <input type="radio" name="slideType" id="rColor" checked><label for="rColor">Colors</label>
+    <input type="radio" name="slideType" id="rImage"><label for="rImage">Images</label>
+
     <div class="slideshow middle">
         <input type="radio" name="r" id="r1" checked>
         <input type="radio" name="r" id="r2">
@@ -17,21 +20,39 @@
         <input type="radio" name="r" id="r4">
         <input type="radio" name="r" id="r5">
 
-        <div class="slides">
-            <div class="slide s1">
+        <div class="slides colors">
+            <div class="slide s1 red">
                 <div>Red</div>
             </div>
-            <div class="slide s2">
+            <div class="slide s2 blue">
                 <div>Blue</div>
             </div>
-            <div class="slide s3">
+            <div class="slide s3 orange">
                 <div>Orange</div>
             </div>
-            <div class="slide s4">
+            <div class="slide s4 violet">
                 <div>Violet</div>
             </div>
-            <div class="slide s5">
+            <div class="slide s5 green">
                 <div>Green</div>
+            </div>
+        </div>
+
+        <div class="slides images">
+            <div class="slide s1">
+                <img src="http://unsplash.it/seed/a/700/400" />
+            </div>
+            <div class="slide s2">
+                <img src="http://unsplash.it/seed/b/700/400" />
+            </div>
+            <div class="slide s3">
+                <img src="http://unsplash.it/seed/c/700/400" />
+            </div>
+            <div class="slide s4">
+                <img src="http://unsplash.it/seed/d/700/400" />
+            </div>
+            <div class="slide s5">
+                <img src="http://unsplash.it/seed/e/700/400" />
             </div>
         </div>
 
