@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    padding: 2em;
+    box-sizing: border-box;
+    height: 100vh;
+    font-family: 'Nunito', 'Arial';
+}
+
+summary {
+    padding: 1em;
+    background: rgb(255, 218, 5);
+    cursor: pointer;
+    outline: none;
+    border-radius: 0.3em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background: rgb(255, 224, 52);
+    }
+
+    &::-webkit-details-marker {
+        // background: url('../down.svg') center no-repeat;
+        // color: transparent;
+        // width: 17px;
+        // height: 17px;
+        color: red;
+    }
+}
+
+details[open] summary {
+    & ~ * {
+        animation: sweep-in 0.5s ease-in-out;
+    }
+
+    &::-webkit-details-marker {
+        // background: url('../up.svg') center no-repeat;
+        // color: transparent;
+        color: blue;
+    }
+}
+
+@keyframes sweep-in {
+    from {
+        opacity: 0;
+        margin-top: -10px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+@keyframes sweep-out {
+    from {
+        opacity: 1;
+        margin-top: 0;
+    }
+    to {
+        opacity: 0;
+        margin-top: -10px;
+    }
+}

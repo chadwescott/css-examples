@@ -42,10 +42,10 @@ div {
   grid-gap: 0.2em;
   grid-template-rows: 2em 5em auto 2em;
   grid-template-areas:
-    "header"
-    "side-nav"
-    "content"
-    "footer";
+    'header'
+    'side-nav'
+    'content'
+    'footer';
   min-height: 100vh;
 
   & > div {
@@ -62,9 +62,9 @@ div {
     grid-template-columns: 15em auto;
     grid-template-rows: 2em auto 2em;
     grid-template-areas:
-      "header header"
-      "side-nav content"
-      "footer footer";
+      'header header'
+      'side-nav content'
+      'footer footer';
   }
 }
 
@@ -94,10 +94,10 @@ div {
   grid-gap: 0.2em;
   grid-template-rows: 20em 10em 15em 30em;
   grid-template-areas:
-    "content1"
-    "content2"
-    "content3"
-    "content4";
+    'content1'
+    'content2'
+    'content3'
+    'content4';
 
   & > div {
     padding: 0.5em;
@@ -109,8 +109,8 @@ div {
     grid-template-columns: 30em auto 20em;
     grid-template-rows: 10em auto 12em;
     grid-template-areas:
-      "content1 content1 ."
-      "content2 content2 content2"
-      "content3 . content4";
+      'content1 content1 .'
+      'content3 content2 content2'
+      'content3 . content4';
   }
 }
