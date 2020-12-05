@@ -2,6 +2,7 @@
 
 :root {
     --transition: 400ms ease-in-out;
+    --hover-color: #ff0057;
 }
 
 * {
@@ -34,6 +35,23 @@ body {
         display: flex;
         width: 45%;
         margin: 30px 0;
+        border-radius: 10px;
+
+        &:nth-child(1) {
+            --hover-color: red;
+        }
+
+        &:nth-child(2) {
+            --hover-color: purple;
+        }
+
+        &:nth-child(3) {
+            --hover-color: blue;
+        }
+
+        &:nth-child(4) {
+            --hover-color: green;
+        }
 
         &:hover {
             & .image-box {
@@ -41,11 +59,18 @@ body {
                 height: 150px;
                 left: -75px;
                 top: calc(50% - 75px);
-                background: #ff0057;
+                background: var(--hover-color);
                 transition: var(--transition);
+                border: solid 4px var(--hover-color);
+                box-shadow: inset 0 0 0 2px white;
+                border-radius: 10px;
 
                 & img {
                     max-width: 75px;
+                }
+
+                &:before {
+                    color: rgba(255, 255, 255, 0);
                 }
             }
         }
@@ -55,7 +80,7 @@ body {
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: calc(100% + 2px);
             background: #333;
             z-index: 1;
             display: flex;
@@ -63,6 +88,7 @@ body {
             align-items: center;
             overflow: hidden;
             transition: var(--transition);
+            border-radius: 8px;
 
             &:before {
                 content: attr(data-text);
@@ -75,6 +101,7 @@ body {
                 font-size: 6em;
                 color: rgba(255, 255, 255, 0.05);
                 font-weight: 700;
+                transition: var(--transition);
             }
 
             & img {
@@ -144,6 +171,7 @@ body {
         & .card:hover .image-box {
             width: 100%;
             height: 200px;
+            top: 0;
             left: 0;
         }
 
