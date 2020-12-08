@@ -95,4 +95,4 @@ label .indicator:before {
   box-shadow: 0 0 2px var(--led-color), 0 0 5px var(--led-color), 0 0 10px var(--led-color), 0 0 15px var(--led-color), 0 0 20px var(--led-color), 0 0 25px var(--led-color), 0 0 30px var(--led-color), 0 0 40px var(--led-color);
   transition: var(--transition);
 }
-/*# sourceMappingURL=checkbox.css.map */
+/*# sourceMappingURL=stereo-checkbox.css.map */
