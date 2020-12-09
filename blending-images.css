@@ -33,24 +33,24 @@ body {
 }
 
 .image2 {
-  background: url("/images/unicorn.jpg");
+  background: url("./images/unicorn.jpg");
   background-size: cover;
 }
 
 .image1 {
-  background: url("/images/unicorn.jpg"), url("/images/unicorn.jpg");
+  background: url("./images/unicorn.jpg"), url("./images/unicorn.jpg");
   background-size: cover;
   background-blend-mode: screen;
 }
 
 .image1:hover {
-  background: url("/images/unicorn.jpg"), purple;
+  background: url("./images/unicorn.jpg"), purple;
   background-size: cover;
   background-blend-mode: screen;
 }
 
 .image3 {
-  background: url("/images/unicorn.jpg"), black;
+  background: url("./images/unicorn.jpg"), black;
   background-size: cover;
   background-blend-mode: luminosity;
 }
