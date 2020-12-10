@@ -57,9 +57,6 @@ label {
 
                     &:before {
                          --led-color: var(--clr-led-on);
-                         box-shadow: 0 0 2px var(--led-color), 0 0 5px var(--led-color), 0 0 10px var(--led-color),
-                              0 0 15px var(--led-color), 0 0 20px var(--led-color), 0 0 25px var(--led-color),
-                              0 0 30px var(--led-color), 0 0 40px var(--led-color);
                          box-shadow: 0 0 0.125em var(--led-color), 0 0 0.25em var(--led-color),
                               0 0 0.5em var(--led-color), 0 0 0.75em var(--led-color), 0 0 1em var(--led-color),
                               0 0 1.25em var(--led-color), 0 0 1.5em var(--led-color), 0 0 2.5em var(--led-color);
@@ -104,9 +101,6 @@ label {
                background: var(--led-color);
                border-radius: 50%;
                transition: var(--transition);
-               box-shadow: 0 0 0.125em var(--clr-bg), 0 0 0.25em var(--clr-bg), 0 0 0.5em var(--clr-bg),
-                    0 0 0.75em var(--clr-bg), 0 0 1em var(--clr-bg), 0 0 1.25em var(--clr-bg), 0 0 1.5em var(--clr-bg),
-                    0 0 2.5em var(--clr-bg);
           }
      }
 }
