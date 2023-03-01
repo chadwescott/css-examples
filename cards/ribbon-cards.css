@@ -1,20 +1,12 @@
 body {
   margin: 2rem;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  box-sizing: border-box;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   gap: 2.5rem;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   min-height: 100vh;
   background: #aaa;
 }
@@ -27,91 +19,75 @@ body {
   border-radius: 1.5rem;
   background-color: #fff;
   position: relative;
-  -webkit-box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.2);
   padding: 2.75rem 0.75rem;
 }
-
 .card.green {
   --ribbon-clr: #0b0;
   --ribbon-shadow-clr: #080;
 }
-
 .card.blue {
   --ribbon-clr: blue;
   --ribbon-shadow-clr: #00a;
 }
-
 .card.purple {
   --ribbon-clr: #a0a;
   --ribbon-shadow-clr: purple;
 }
-
 .card i {
   --ribbon-height: 1rem;
   position: absolute;
   background: var(--ribbon-clr);
   width: 100%;
   height: 2rem;
-  -webkit-box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.4);
-          box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.4);
   border-radius: 1.5rem;
 }
-
 .card i::before {
-  content: '';
+  content: "";
   position: absolute;
   height: var(--ribbon-height);
   width: 1rem;
   background: var(--ribbon-shadow-clr);
   z-index: 1;
 }
-
 .card i::after {
-  content: '';
+  content: "";
   position: absolute;
   height: var(--ribbon-height);
   width: 1rem;
   background: var(--ribbon-clr);
 }
-
 .card i.top {
   top: 1rem;
   left: -1rem;
   border-bottom-left-radius: 0;
   border-top-right-radius: 0.5rem;
 }
-
 .card i.top::before {
   top: 2rem;
   border-top-left-radius: 1.5rem;
   border-bottom-left-radius: 1.5rem;
 }
-
 .card i.top::after {
   top: 2rem;
   border-bottom-left-radius: 1.5rem;
-  -webkit-box-shadow: 0px 2px 8px 0 rgba(0, 0, 0, 0.4);
-          box-shadow: 0px 2px 8px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 8px 0 rgba(0, 0, 0, 0.4);
 }
-
 .card i.bottom {
   bottom: 1rem;
   right: -1rem;
   border-top-right-radius: 0;
   border-bottom-left-radius: 0.5rem;
 }
-
 .card i.bottom::before {
   bottom: 2rem;
   right: 0rem;
   border-top-right-radius: 1.5rem;
   border-bottom-right-radius: 1.5rem;
 }
-
 .card i.bottom::after {
   bottom: 2rem;
   right: 0rem;
   border-top-right-radius: 1.5rem;
-}
-/*# sourceMappingURL=ribbon-cards.css.map */
+}/*# sourceMappingURL=ribbon-cards.css.map */

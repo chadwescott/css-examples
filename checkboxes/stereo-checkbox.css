@@ -13,35 +13,23 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   min-height: 100vh;
 }
-
 body > div {
   font-size: 1rem;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background: var(--clr-bg);
   margin: 1em;
   border-radius: 1em;
   padding: 0.5em 1em;
-  -webkit-box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.4);
-          box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.4);
 }
 
 [light] {
@@ -57,24 +45,19 @@ label {
   margin: 0.3125em 0;
   cursor: pointer;
 }
-
 label input {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   display: none;
 }
-
 label input:checked ~ .indicator {
   left: calc(var(--inset-width) - var(--indicator-size));
 }
-
 label input:checked ~ .indicator:before {
   --led-color: var(--clr-led-on);
-  -webkit-box-shadow: 0 0 0.125em var(--led-color), 0 0 0.25em var(--led-color), 0 0 0.5em var(--led-color), 0 0 0.75em var(--led-color), 0 0 1em var(--led-color), 0 0 1.25em var(--led-color), 0 0 1.5em var(--led-color), 0 0 2.5em var(--led-color);
-          box-shadow: 0 0 0.125em var(--led-color), 0 0 0.25em var(--led-color), 0 0 0.5em var(--led-color), 0 0 0.75em var(--led-color), 0 0 1em var(--led-color), 0 0 1.25em var(--led-color), 0 0 1.5em var(--led-color), 0 0 2.5em var(--led-color);
+  box-shadow: 0 0 0.125em var(--led-color), 0 0 0.25em var(--led-color), 0 0 0.5em var(--led-color), 0 0 0.75em var(--led-color), 0 0 1em var(--led-color), 0 0 1.25em var(--led-color), 0 0 1.5em var(--led-color), 0 0 2.5em var(--led-color);
 }
-
 label span {
   position: relative;
   display: block;
@@ -82,10 +65,8 @@ label span {
   height: var(--indicator-size);
   background: var(--clr-inset);
   border-radius: var(--indicator-size);
-  -webkit-box-shadow: inset 0 2px 15px rgba(0, 0, 0, 0.2), inset 0 2px 2px rgba(0, 0, 0, 0.2), inset 0 -1px 1px rgba(0, 0, 0, 0.2);
-          box-shadow: inset 0 2px 15px rgba(0, 0, 0, 0.2), inset 0 2px 2px rgba(0, 0, 0, 0.2), inset 0 -1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 2px 15px rgba(0, 0, 0, 0.2), inset 0 2px 2px rgba(0, 0, 0, 0.2), inset 0 -1px 1px rgba(0, 0, 0, 0.2);
 }
-
 label .indicator {
   position: absolute;
   top: 0;
@@ -94,14 +75,11 @@ label .indicator {
   height: var(--indicator-size);
   background: var(--clr-indicator);
   border-radius: 50%;
-  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
-  -webkit-transition: var(--transition);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
   transition: var(--transition);
 }
-
 label .indicator:before {
-  content: '';
+  content: "";
   position: absolute;
   --led-color: var(--clr-led-off);
   top: 0;
@@ -113,7 +91,5 @@ label .indicator:before {
   margin: auto;
   background: var(--led-color);
   border-radius: 50%;
-  -webkit-transition: var(--transition);
   transition: var(--transition);
-}
-/*# sourceMappingURL=stereo-checkbox.css.map */
+}/*# sourceMappingURL=stereo-checkbox.css.map */

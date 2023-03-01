@@ -1,27 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,900&display=swap");
 :root {
   --transition: 400ms ease-in-out;
-  --hover-color: #ff0057;
+  --hover-color: yellow;
 }
 
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
   background: #222;
 }
@@ -29,67 +22,49 @@ body {
 .container {
   position: relative;
   width: 1000px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: space-between;
+  flex-wrap: wrap;
   margin: 20px;
 }
-
 .container .card {
   position: relative;
   height: 300px;
   background: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 45%;
   margin: 30px 0;
   border-radius: 10px;
 }
-
 .container .card:nth-child(1) {
   --hover-color: red;
 }
-
 .container .card:nth-child(2) {
   --hover-color: purple;
 }
-
 .container .card:nth-child(3) {
   --hover-color: blue;
 }
-
 .container .card:nth-child(4) {
   --hover-color: green;
 }
-
 .container .card:hover .image-box {
   width: 150px;
   height: 150px;
   left: -75px;
   top: calc(50% - 75px);
   background: var(--hover-color);
-  -webkit-transition: var(--transition);
   transition: var(--transition);
   border: solid 4px var(--hover-color);
-  -webkit-box-shadow: inset 0 0 0 2px white;
-          box-shadow: inset 0 0 0 2px white;
+  box-shadow: inset 0 0 0 2px white;
   border-radius: 10px;
 }
-
 .container .card:hover .image-box img {
   max-width: 75px;
 }
-
 .container .card:hover .image-box:before {
   color: rgba(255, 255, 255, 0);
 }
-
 .container .card .image-box {
   position: absolute;
   top: 0;
@@ -98,21 +73,13 @@ body {
   height: calc(100% + 2px);
   background: #333;
   z-index: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
-  -webkit-transition: var(--transition);
   transition: var(--transition);
   border-radius: 8px;
 }
-
 .container .card .image-box:before {
   content: attr(data-text);
   position: absolute;
@@ -124,44 +91,28 @@ body {
   font-size: 6em;
   color: rgba(255, 255, 255, 0.05);
   font-weight: 700;
-  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
-
 .container .card .image-box img {
-  -webkit-filter: invert(1);
-          filter: invert(1);
+  filter: invert(1);
   max-width: 100px;
-  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
-
 .container .card .content {
   position: absolute;
   right: 0;
   width: calc(100% - 75px);
   height: 100%;
   padding: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
-
 .container .card .content h3 {
   margin-bottom: 5px;
   font-size: 24px;
 }
-
 .container .card .content a {
   display: inline-block;
   margin-top: 10px;
@@ -174,26 +125,17 @@ body {
 @media (max-width: 992px) {
   .container {
     width: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   .container .card {
     width: 400px;
   }
 }
-
 @media (max-width: 768px) {
   .container .card {
     max-width: 300px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     height: auto;
   }
   .container .card .image-box {
@@ -204,17 +146,14 @@ body {
     position: relative;
     width: 100%;
   }
-  .container .card .image-box,
-  .container .card:hover .image-box {
+  .container .card .image-box, .container .card:hover .image-box {
     width: 100%;
     height: 200px;
     top: 0;
     left: 0;
     border-radius: 8px 8px 0 0;
   }
-  .container .card .image-box img,
-  .container .card:hover .image-box img {
+  .container .card .image-box img, .container .card:hover .image-box img {
     max-width: 100px;
   }
-}
-/*# sourceMappingURL=hover-cards.css.map */
+}/*# sourceMappingURL=hover-cards.css.map */

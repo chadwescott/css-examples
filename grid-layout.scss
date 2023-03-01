@@ -59,7 +59,7 @@ div {
 
 @media (min-width: 800px) {
   .container {
-    grid-template-columns: 15em auto;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 2em auto 2em;
     grid-template-areas:
       'header header'

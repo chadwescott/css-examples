@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Your Ps and Qs</title>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        .image {
+            position: relative;
+        }
+
+        .grid {
+            --grid-height: 130px;
+            --grid-width: 195px;
+            position: absolute;
+            left: 278px;
+            top: 250px;
+            height: var(--grid-height);
+            width: var(--grid-width);
+            --square-height: calc(var(--grid-height) / 4);
+            --square-width: calc(var(--grid-width) / 6);
+            display: grid;
+            grid-template-columns: repeat(6, var(--square-width));
+            grid-template-rows: repeat(4, var(--square-height));
+            background: white;
+            border-top: solid 1px black;
+            border-left: solid 1px black;
+            border-bottom: solid 2px black;
+            border-right: solid 2px black;
+        }
+
+        .square {
+            position: relative;
+            font-size: 26px;
+            font-family: Arial, Helvetica, sans-serif;
+            border-top: solid 1px black;
+            border-left: solid 1px black;
+            --padding-top: 2px;
+            --padding-left: 8px;
+            --transparency: 30%;
+        }
+
+        .square::before {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: var(--background-color);
+        }
+
+        .square::after {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            padding-top: var(--padding-top);
+            padding-left: var(--padding-left);
+        }
+
+        .p::before {
+            content: '';
+            --background-color: rgb(255 0 0 / var(--transparency));
+        }
+
+        .given.p::before,
+        .given.q::before {
+            --transparency: 50%;
+        }
+
+        .p::after {
+            content: 'P';
+        }
+
+        .q::before {
+            content: '';
+            --background-color: rgb(0 0 255 / var(--transparency));
+        }
+
+        .q::after {
+            content: 'Q';
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image">
+        <img src="brain-teaser.jpg" />
+        <div class="grid">
+            <div class="square q"></div>
+            <div class="square q"></div>
+            <div class="square q"></div>
+            <div class="square q"></div>
+            <div class="square p"></div>
+            <div class="square p"></div>
+            <div class="square q"></div>
+            <div class="square p given"></div>
+            <div class="square q given"></div>
+            <div class="square q"></div>
+            <div class="square q given"></div>
+            <div class="square p"></div>
+            <div class="square q"></div>
+            <div class="square p"></div>
+            <div class="square p"></div>
+            <div class="square p"></div>
+            <div class="square q"></div>
+            <div class="square p"></div>
+            <div class="square q"></div>
+            <div class="square q given"></div>
+            <div class="square p given"></div>
+            <div class="square p"></div>
+            <div class="square p"></div>
+            <div class="square p"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -25,8 +25,7 @@ h1::before {
   background-color: red;
   width: 100vw;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   z-index: -2;
 }
 
@@ -48,5 +47,4 @@ p.block-quote:before {
 
 p.block-quote:after {
   content: close-quote;
-}
-/*# sourceMappingURL=section-headings.css.map */
+}/*# sourceMappingURL=section-headings.css.map */

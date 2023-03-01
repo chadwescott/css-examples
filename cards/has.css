@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+
+.container {
+  margin: 10px;
+  height: 100px;
+  width: 500px;
+  overflow: auto;
+  border-radius: 0.5rem;
+  border: solid 1px red;
+  background-color: lightblue;
+  padding: 5px;
+}
+
+thead {
+  background-color: green;
+}/*# sourceMappingURL=has.css.map */

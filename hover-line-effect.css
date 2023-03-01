@@ -12,71 +12,52 @@ p {
 div {
   margin: 0 auto;
 }
-
 div.square {
   position: relative;
   height: 400px;
   width: 400px;
   background-color: red;
-  -webkit-transition: opacity ease-out 250ms;
   transition: opacity ease-out 250ms;
 }
-
 div.square:hover {
   background-color: rgba(255, 0, 0, 0.4);
 }
-
 div.square:hover .square-text {
   opacity: 1.4;
 }
-
 div.square:before, div.square:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 1.25em;
   bottom: 1.25em;
   left: 1.25em;
   right: 1.25em;
   opacity: 1;
-  -webkit-transition: -webkit-transform ease-out 250ms;
-  transition: -webkit-transform ease-out 250ms;
   transition: transform ease-out 250ms;
-  transition: transform ease-out 250ms, -webkit-transform ease-out 250ms;
 }
-
 div.square:before {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-  -webkit-transform: scale(0, 1);
-          transform: scale(0, 1);
+  transform: scale(0, 1);
 }
-
 div.square:after {
   border-left: 1px solid black;
   border-right: 1px solid black;
-  -webkit-transform: scale(1, 0);
-          transform: scale(1, 0);
+  transform: scale(1, 0);
 }
-
 div.square:hover:before {
-  -webkit-transform: scale(1.05, 1);
-          transform: scale(1.05, 1);
+  transform: scale(1.05, 1);
 }
-
 div.square:hover:after {
-  -webkit-transform: scale(1, 1.05);
-          transform: scale(1, 1.05);
+  transform: scale(1, 1.05);
 }
 
 .square-text {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   color: black;
   opacity: 0;
-  -webkit-transition: opacity ease-out 250ms;
   transition: opacity ease-out 250ms;
-}
-/*# sourceMappingURL=hover-line-effect.css.map */
+}/*# sourceMappingURL=hover-line-effect.css.map */

@@ -1,27 +1,23 @@
 body {
   margin: 0;
   padding: 2em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   height: 100vh;
-  font-family: 'Nunito', 'Arial';
+  font-family: "Nunito", "Arial";
 }
 
 summary {
   padding: 1em;
-  background: #ffda05;
+  background: rgb(255, 218, 5);
   cursor: pointer;
   outline: none;
   border-radius: 0.3em;
   font-weight: bold;
-  -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
-
 summary:hover {
-  background: #ffe034;
+  background: rgb(255, 224, 52);
 }
-
 summary::-webkit-details-marker {
   color: red;
 }
@@ -30,7 +26,6 @@ details[open] summary ~ * {
   -webkit-animation: sweep-in 0.5s ease-in-out;
           animation: sweep-in 0.5s ease-in-out;
 }
-
 details[open] summary::-webkit-details-marker {
   color: blue;
 }
@@ -56,7 +51,6 @@ details[open] summary::-webkit-details-marker {
     margin-top: 0;
   }
 }
-
 @-webkit-keyframes sweep-out {
   from {
     opacity: 1;
@@ -67,7 +61,6 @@ details[open] summary::-webkit-details-marker {
     margin-top: -10px;
   }
 }
-
 @keyframes sweep-out {
   from {
     opacity: 1;
@@ -77,5 +70,4 @@ details[open] summary::-webkit-details-marker {
     opacity: 0;
     margin-top: -10px;
   }
-}
-/*# sourceMappingURL=details-summary.css.map */
+}/*# sourceMappingURL=details-summary.css.map */
