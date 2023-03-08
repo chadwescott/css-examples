@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Wide</title>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        .image {
+            position: relative;
+            --image-width: min(90vw, 600px);
+        }
+
+        img {
+            height: auto;
+            width: var(--image-width);
+        }
+
+        .grid {
+            --grid-height: calc(var(--image-width) * 0.467);
+            --grid-width: calc(var(--image-width) * 0.36);
+            position: absolute;
+            left: calc(var(--image-width) - var(--image-width) / 2.41);
+            top: calc(var(--image-width) - var(--image-width) / 1.19);
+            height: var(--grid-height);
+            width: var(--grid-width);
+            --square-height: calc(var(--grid-height) / 8);
+            --square-width: calc(var(--grid-width) / 6);
+            display: grid;
+            grid-template-columns: repeat(6, var(--square-width));
+            grid-template-rows: repeat(8, var(--square-height));
+        }
+
+        .square {
+            position: relative;
+            font-size: 26px;
+            font-family: Arial, Helvetica, sans-serif;
+            --padding-top: 2px;
+            --padding-left: 8px;
+            --transparency: 30%;
+        }
+
+        .square::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: var(--background-color);
+        }
+
+        .word-1::before {
+            --background-color: rgb(0 0 255 / var(--transparency));
+        }
+
+        .word-2::before {
+            --background-color: rgb(255 0 0 / var(--transparency));
+        }
+
+        .word-3::before {
+            --background-color: rgb(0 255 0 / var(--transparency));
+        }
+
+        .word-4::before {
+            --background-color: rgb(0 255 255 / var(--transparency));
+        }
+
+        .word-5::before {
+            --background-color: rgb(255 0 255 / var(--transparency));
+        }
+
+        .word-6::before {
+            --background-color: rgb(255 255 0 / var(--transparency));
+        }
+
+        .word-7::before {
+            --background-color: rgb(100 100 100 / var(--transparency));
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image">
+        <img src="open-wide.jpg" />
+        <div class="grid">
+            <div class="square word-1"></div>
+            <div class="square word-2"></div>
+            <div class="square word-2"></div>
+            <div class="square word-2"></div>
+            <div class="square word-2"></div>
+            <div class="square word-3"></div>
+            <div class="square word-1"></div>
+            <div class="square word-2"></div>
+            <div class="square word-1"></div>
+            <div class="square word-3"></div>
+            <div class="square word-3"></div>
+            <div class="square word-3"></div>
+            <div class="square word-1"></div>
+            <div class="square word-1"></div>
+            <div class="square word-1"></div>
+            <div class="square word-3"></div>
+            <div class="square word-4"></div>
+            <div class="square word-4"></div>
+            <div class="square word-6"></div>
+            <div class="square word-6"></div>
+            <div class="square word-3"></div>
+            <div class="square word-3"></div>
+            <div class="square word-5"></div>
+            <div class="square word-4"></div>
+            <div class="square word-7"></div>
+            <div class="square word-6"></div>
+            <div class="square word-3"></div>
+            <div class="square word-5"></div>
+            <div class="square word-5"></div>
+            <div class="square word-4"></div>
+            <div class="square word-7"></div>
+            <div class="square word-6"></div>
+            <div class="square word-7"></div>
+            <div class="square word-5"></div>
+            <div class="square word-4"></div>
+            <div class="square word-4"></div>
+            <div class="square word-7"></div>
+            <div class="square word-6"></div>
+            <div class="square word-7"></div>
+            <div class="square word-5"></div>
+            <div class="square word-4"></div>
+            <div class="square word-5"></div>
+            <div class="square word-7"></div>
+            <div class="square word-7"></div>
+            <div class="square word-7"></div>
+            <div class="square word-5"></div>
+            <div class="square word-5"></div>
+            <div class="square word-5"></div>
+        </div>
+    </div>
+</body>
+
+</html>
