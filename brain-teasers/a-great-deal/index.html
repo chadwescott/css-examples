@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Great Deal</title>
+    <script>
+        let answerVisible = false;
+
+        function toggleAnswer() {
+            if (answerVisible) {
+                hideAnswer();
+            } else {
+                showAnswer();
+            }
+        }
+
+        function hideAnswer() {
+            document.getElementById('answer').setAttribute('hidden', null);
+            document.getElementById('toggleAnswer').innerText = 'Show Answer';
+            answerVisible = false;
+        }
+
+        function showAnswer() {
+            document.getElementById('answer').removeAttribute('hidden');
+            document.getElementById('toggleAnswer').innerText = 'Hide Answer';
+            answerVisible = true;
+        }
+    </script>
+
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        a {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .answer[hidden] {
+            display: none;
+        }
+
+        .image {
+            position: relative;
+            --image-width: min(90vw, 37.5rem);
+            width: var(--image-width);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        img {
+            height: auto;
+            width: var(--image-width);
+        }
+
+        .answer {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            position: absolute;
+            width: 100%;
+            margin-top: 55%;
+            font-size: 2rem;
+        }
+
+        .card {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            border: solid 1px black;
+            border-radius: 4px;
+            height: 5rem;
+            width: 3rem;
+            background: white;
+        }
+
+        [rank=ace]::before {
+            content: 'A';
+        }
+
+        [rank=king]::before {
+            content: 'K';
+        }
+
+        [rank=queen]::before {
+            content: 'Q';
+        }
+
+        [rank=jack]::before {
+            content: 'J';
+        }
+
+        [suit]::after {
+            font-size: 1.8rem;
+        }
+
+        [suit=spade],
+        [suit=club] {
+            color: black;
+        }
+
+        [suit=spade]::after {
+            content: '\2660';
+        }
+
+        [suit=club]::after {
+            content: '\2663';
+        }
+
+        [suit=diamond],
+        [suit=heart] {
+            color: red;
+        }
+
+        [suit=diamond]::after {
+            content: '\2666';
+        }
+
+        [suit=heart]::after {
+            content: '\2665';
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image">
+        <img src="brain-teaser.jpg" />
+        <div id="answer" class="answer" hidden>
+            <div class="card" rank="queen" suit="spade"></div>
+            <div class="card" rank="ace" suit="club"></div>
+            <div class="card" rank="jack" suit="diamond"></div>
+            <div class="card" rank="king" suit="heart"></div>
+        </div>
+        <a id="toggleAnswer" onclick="toggleAnswer()">Show Answer</a>
+    </div>
+</body>
+
+</html>
