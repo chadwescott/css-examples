@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Fives for a Ten</title>
+    <script>
+        let answerVisible = false;
+
+        function toggleAnswer() {
+            if (answerVisible) {
+                hideAnswer();
+            } else {
+                showAnswer();
+            }
+        }
+
+        function hideAnswer() {
+            document.getElementById('answer').setAttribute('hidden', null);
+            document.getElementById('toggleAnswer').innerText = 'Show Answer';
+            answerVisible = false;
+        }
+
+        function showAnswer() {
+            document.getElementById('answer').removeAttribute('hidden');
+            document.getElementById('toggleAnswer').innerText = 'Hide Answer';
+            answerVisible = true;
+        }
+    </script>
+
+    <style>
+        :root {
+            --image-width: min(90vw, 600px);
+            --delay: 500ms;
+            --grid-height: calc(var(--image-width) * 0.235);
+            --grid-width: calc(var(--image-width) * 0.294);
+            --square-height: calc(var(--grid-height) / 4);
+            --square-width: calc(var(--grid-width) / 5);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        a {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .image {
+            position: relative;
+            width: var(--image-width);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        img {
+            height: auto;
+            width: var(--image-width);
+        }
+
+        .grid {
+            position: absolute;
+            left: calc(var(--image-width) - var(--image-width) / 2.785);
+            top: calc(var(--image-width) - var(--image-width) / 1.165);
+            height: var(--grid-height);
+            width: var(--grid-width);
+            display: grid;
+            grid-template-columns: repeat(5, var(--square-width));
+            grid-template-rows: repeat(4, var(--square-height));
+            align-items: center;
+        }
+
+        [hidden] {
+            display: none;
+        }
+
+        .square {
+            height: var(--square-height);
+            width: var(--square-width);
+        }
+
+        .outline {
+            border: solid 1px black;
+        }
+
+        @keyframes highlight {
+            0% {
+                background-color: transparent;
+                box-shadow: 0 0 2px transparent;
+            }
+
+            50% {
+                background-color: rgb(255 255 0 / 0.4);
+                box-shadow: 0 0 4px 5px rgb(255 255 0 / 0.25);
+            }
+
+            100% {
+                background-color: transparent;
+                box-shadow: 0 0 2px transparent;
+            }
+        }
+
+        [letter] {
+            --letter: 1;
+            animation-name: highlight;
+            animation-duration: 500ms;
+            animation-delay: calc((var(--letter) - 1) * var(--delay));
+            font-size: clamp(8px, 3.5cqi, 24px);
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            line-height: clamp(12px, 5.5cqi, 34px);
+        }
+
+        [letter='2'] {
+            --letter: 2;
+        }
+
+        [letter='3'] {
+            --letter: 3;
+        }
+
+        [letter='4'] {
+            --letter: 4;
+        }
+
+        [letter='5'] {
+            --letter: 5;
+        }
+
+        [letter='6'] {
+            --letter: 6;
+        }
+
+        [letter='7'] {
+            --letter: 7;
+        }
+
+        [letter='8'] {
+            --letter: 8;
+        }
+
+        [letter='9'] {
+            --letter: 9;
+        }
+
+        [letter='10'] {
+            --letter: 10;
+        }
+
+        .word-1 {
+            left: calc(var(--image-width) - var(--image-width) / 2.78);
+            top: calc(var(--image-width) - var(--image-width) / 1.72);
+        }
+
+        .word-2 {
+            left: calc(var(--image-width) - var(--image-width) / 2.78);
+            top: calc(var(--image-width) - var(--image-width) / 2.08);
+        }
+
+        .word-1,
+        .word-2 {
+            --letter: 1;
+            position: absolute;
+            height: var(--square-height);
+            width: var(--grid-width);
+            display: grid;
+            grid-template-columns: repeat(5, var(--square-width));
+            align-items: center;
+        }
+
+        .main-answer {
+            position: absolute;
+            display: flex;
+            left: calc(var(--image-width) - var(--image-width) / 1.54);
+            top: calc(var(--image-width) - var(--image-width) / 2.72);
+            border: solid 1px black;
+        }
+
+        #answer {
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image">
+        <img src="brain-teaser.jpg" />
+        <a id="toggleAnswer" onclick="toggleAnswer()">Show Answer</a>
+        <div id="answer" hidden>
+            <div class="grid">
+                <div></div>
+                <div></div>
+                <div class="square" letter="3"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="square" letter="10"></div>
+                <div class="square" letter="4"></div>
+                <div class="square" letter="2"></div>
+                <div></div>
+                <div class="square" letter="9"></div>
+                <div class="square" letter="8"></div>
+                <div class="square" letter="7"></div>
+                <div class="square" letter="5"></div>
+                <div class="square" letter="1"></div>
+                <div></div>
+                <div></div>
+                <div class="square" letter="6"></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="word-1">
+                <div class="square" letter="3"></div>
+                <div class="square" letter="7">E</div>
+                <div class="square" letter="4">B</div>
+                <div class="square" letter="10">E</div>
+                <div class="square" letter="6"></div>
+            </div>
+            <div class="word-2">
+                <div class="square" letter="2"></div>
+                <div class="square" letter="8">N</div>
+                <div class="square" letter="9">C</div>
+                <div class="square" letter="5">U</div>
+                <div class="square" letter="1"></div>
+            </div>
+            <div class="main-answer">
+                <div class="square outline" letter="1">T</div>
+                <div class="square outline" letter="2">U</div>
+                <div class="square outline" letter="3">R</div>
+                <div class="square outline" letter="4">B</div>
+                <div class="square outline" letter="5">U</div>
+                <div class="square outline" letter="6">L</div>
+                <div class="square outline" letter="7">E</div>
+                <div class="square outline" letter="8">N</div>
+                <div class="square outline" letter="9">C</div>
+                <div class="square outline" letter="10">E</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
