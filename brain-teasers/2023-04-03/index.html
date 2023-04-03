@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>April 3rd, 2023</title>
+    <script>
+        let answerVisible = false;
+
+        function toggleAnswer() {
+            if (answerVisible) {
+                hideAnswer();
+            } else {
+                showAnswer();
+            }
+        }
+
+        function hideAnswer() {
+            document.getElementById('answer').setAttribute('hidden', null);
+            document.getElementById('toggleAnswer').innerText = 'Show Answer';
+            answerVisible = false;
+        }
+
+        function showAnswer() {
+            document.getElementById('answer').removeAttribute('hidden');
+            document.getElementById('toggleAnswer').innerText = 'Hide Answer';
+            answerVisible = true;
+        }
+    </script>
+
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        a {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .image {
+            position: relative;
+            --image-width: min(90vw, 600px);
+            width: var(--image-width);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        img {
+            height: auto;
+            width: var(--image-width);
+            filter: hue-rotate(125deg) drop-shadow(4px 4px 4px rgb(0 0 0 / .25));
+        }
+
+        .grid {
+            --grid-height: calc(var(--image-width) * 0.445);
+            --grid-width: calc(var(--image-width) * 0.388);
+            position: absolute;
+            left: calc(var(--image-width) - var(--image-width) / 2.18);
+            top: calc(var(--image-width) - var(--image-width) / 1.085);
+            height: var(--grid-height);
+            width: var(--grid-width);
+            --square-height: calc(var(--grid-height) / 7);
+            --square-width: calc(var(--grid-width) / 6);
+            display: grid;
+            grid-template-columns: repeat(6, var(--square-width));
+            grid-template-rows: repeat(7, var(--square-height));
+            transform: rotate(-1deg);
+            font-size: clamp(4px, 4cqi, 32px);
+        }
+
+        .grid[hidden] .square {
+            display: none;
+        }
+
+        .square {
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            padding-top: min(0.8cqi, 2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image">
+        <img src="brain-teaser.jpg" />
+        <div id="answer" class="grid" hidden>
+            <div class="square">C</div>
+            <div class="square">L</div>
+            <div class="square">O</div>
+            <div class="square">S</div>
+            <div class="square">E</div>
+            <div class="square">T</div>
+            <div class="square">C</div>
+            <div class="square">L</div>
+            <div class="square">O</div>
+            <div class="square">V</div>
+            <div class="square">E</div>
+            <div class="square">R</div>
+            <div class="square">B</div>
+            <div class="square">E</div>
+            <div class="square">A</div>
+            <div class="square">V</div>
+            <div class="square">E</div>
+            <div class="square">R</div>
+            <div class="square">B</div>
+            <div class="square">E</div>
+            <div class="square">T</div>
+            <div class="square">T</div>
+            <div class="square">E</div>
+            <div class="square">R</div>
+            <div class="square">B</div>
+            <div class="square">A</div>
+            <div class="square">T</div>
+            <div class="square">T</div>
+            <div class="square">E</div>
+            <div class="square">R</div>
+            <div class="square">B</div>
+            <div class="square">A</div>
+            <div class="square">N</div>
+            <div class="square">G</div>
+            <div class="square">E</div>
+            <div class="square">R</div>
+            <div class="square">H</div>
+            <div class="square">A</div>
+            <div class="square">N</div>
+            <div class="square">G</div>
+            <div class="square">E</div>
+            <div class="square">R</div>
+        </div>
+        <a id="toggleAnswer" onclick="toggleAnswer()">Show Answer</a>
+    </div>
+</body>
+
+</html>
