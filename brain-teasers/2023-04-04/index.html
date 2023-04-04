@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tromino Tiling</title>
+    <script>
+        let answerVisible = false;
+
+        function toggleAnswer() {
+            if (answerVisible) {
+                hideAnswer();
+            } else {
+                showAnswer();
+            }
+        }
+
+        function hideAnswer() {
+            document.getElementById('answer').classList.add('hidden');
+            document.getElementById('toggleAnswer').innerText = 'Show Answer';
+            answerVisible = false;
+        }
+
+        function showAnswer() {
+            document.getElementById('answer').classList.remove('hidden');
+            document.getElementById('toggleAnswer').innerText = 'Hide Answer';
+            answerVisible = true;
+        }
+    </script>
+
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        a {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .image {
+            position: relative;
+            --image-width: min(90vw, 600px);
+            width: var(--image-width);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            --grid-height: calc(var(--image-width) * 0.35);
+            --grid-width: calc(var(--image-width) * 0.35);
+            --square-height: calc(var(--grid-height) / 6);
+            --square-width: calc(var(--grid-width) / 6);
+            --transparency: 30%;
+            --color-1: rgb(0 0 255 / var(--transparency));
+            --color-2: rgb(255 0 0 / var(--transparency));
+            --border-width: 2px;
+        }
+
+        img {
+            height: auto;
+            width: var(--image-width);
+        }
+
+        #answer {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        #toggleAnswer {
+            z-index: 1;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .grid {
+            position: absolute;
+            left: calc(var(--image-width) - var(--image-width) / 1.96);
+            top: calc(var(--image-width) - var(--image-width) / 1.52);
+            height: var(--grid-height);
+            width: var(--grid-width);
+            display: grid;
+            grid-template-columns: repeat(6, var(--square-width));
+            grid-template-rows: repeat(8, var(--square-height));
+        }
+
+        .shape-1,
+        .shape-2 {
+            position: absolute;
+        }
+
+        .shape-1 {
+            --background-color: var(--color-1);
+            left: calc(var(--image-width) - var(--image-width) / 1.20);
+            top: calc(var(--image-width) - var(--image-width) / 1.87);
+            display: grid;
+            grid-template-columns: repeat(2, calc(var(--square-width) * 0.85));
+            grid-template-rows: repeat(2, calc(var(--square-height) * 0.88));
+        }
+
+        .shape-2 {
+            --background-color: var(--color-2);
+            left: calc(var(--image-width) - var(--image-width) / 1.47);
+            top: calc(var(--image-width) - var(--image-width) / 1.76);
+            display: grid;
+            grid-template-columns: repeat(1, calc(var(--square-width) * 0.95));
+            grid-template-rows: repeat(3, calc(var(--square-height) * 0.98));
+        }
+
+        .square {
+            position: relative;
+        }
+
+        .square::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: var(--background-color);
+        }
+
+        .color-1::before {
+            --background-color: var(--color-1);
+        }
+
+        .color-2::before {
+            --background-color: var(--color-2);
+        }
+
+        .bt {
+            border-top: solid var(--border-width) black;
+        }
+
+        .bl {
+            border-left: solid var(--border-width) black;
+        }
+
+        .br {
+            border-right: solid var(--border-width) black;
+        }
+
+        .bb {
+            border-bottom: solid var(--border-width) black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image">
+        <img src="brain-teaser.jpg" />
+
+        <div id="answer" class="hidden">
+            <div class="shape-1">
+                <div class="square"></div>
+                <div></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+
+            <div class="shape-2">
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+
+            <div class="grid">
+                <div class="square color-1 bt bl"></div>
+                <div class="square color-1 bt br bb"></div>
+                <div class="square color-2 bt bl bb"></div>
+                <div class="square color-2 bt bb"></div>
+                <div class="square color-2 bt bb br"></div>
+                <div class="square color-2 bt bl br"></div>
+                <div class="square color-1 bl bb br"></div>
+                <div class="square color-2 bl bt bb"></div>
+                <div class="square color-2 bt bb"></div>
+                <div class="square color-2 br bt bb"></div>
+                <div class="square color-1 bt bl br"></div>
+                <div class="square color-2 bl br"></div>
+                <div class="square color-1 bl bt bb"></div>
+                <div class="square color-1 bt br"></div>
+                <div class="square color-1 bl br bt"></div>
+                <div class="square color-1 bl bt bb"></div>
+                <div class="square color-1 br bb"></div>
+                <div class="square color-2 bl br bb"></div>
+                <div class="square color-2 bt bl br"></div>
+                <div class="square color-1 bl br bb"></div>
+                <div class="square color-1 bl bb"></div>
+                <div class="square color-1 bt bb br"></div>
+                <div class="square color-1 bl bt bb"></div>
+                <div class="square color-1 bt br"></div>
+                <div class="square color-2 bl br"></div>
+                <div class="square color-1 bl bt br"></div>
+                <div class="square color-2 bt bb bl"></div>
+                <div class="square color-2 bt bb"></div>
+                <div class="square color-2 bt bb br"></div>
+                <div class="square color-1 bl br bb"></div>
+                <div class="square color-2 bl br bb"></div>
+                <div class="square color-1 bl bb"></div>
+                <div class="square color-1 bb bt br"></div>
+                <div class="square color-2 bl bt bb"></div>
+                <div class="square color-2 bt bb"></div>
+                <div class="square color-2 bt bb br"></div>
+            </div>
+        </div>
+        <a id="toggleAnswer" onclick="toggleAnswer()">Show Answer</a>
+    </div>
+</body>
+
+</html>
