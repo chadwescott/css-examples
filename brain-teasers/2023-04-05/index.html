@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Six Pack</title>
+    <script>
+        let answerVisible = false;
+
+        function toggleAnswer() {
+            if (answerVisible) {
+                hideAnswer();
+            } else {
+                showAnswer();
+            }
+        }
+
+        function hideAnswer() {
+            document.getElementById('answer').classList.add('hidden');
+            document.getElementById('toggleAnswer').innerText = 'Show Answer';
+            answerVisible = false;
+        }
+
+        function showAnswer() {
+            document.getElementById('answer').classList.remove('hidden');
+            document.getElementById('toggleAnswer').innerText = 'Hide Answer';
+            answerVisible = true;
+        }
+    </script>
+
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        a {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .image {
+            position: relative;
+            --image-width: min(90vw, 600px);
+            width: var(--image-width);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            --grid-height: calc(var(--image-width) * 0.38);
+            --grid-width: calc(var(--image-width) * 0.385);
+            --square-height: calc(var(--grid-height) / 6);
+            --square-width: calc(var(--grid-width) / 6);
+            --transparency: 30%;
+            --color-1: rgb(0 0 255 / var(--transparency));
+            --color-2: rgb(255 0 0 / var(--transparency));
+            --border-width: 2px;
+        }
+
+        img {
+            height: auto;
+            width: var(--image-width);
+            filter: hue-rotate(190deg);
+        }
+
+        #answer {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        #toggleAnswer {
+            z-index: 1;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .grid {
+            position: absolute;
+            left: calc(var(--image-width) - var(--image-width) / 2.20);
+            top: calc(var(--image-width) - var(--image-width) / 1.186);
+            height: var(--grid-height);
+            width: var(--grid-width);
+            display: grid;
+            grid-template-columns: repeat(6, var(--square-width));
+            grid-template-rows: repeat(6, var(--square-height));
+            transform: rotate(-0.75deg);
+        }
+
+        .square {
+            position: relative;
+            font-size: clamp(4px, 4cqi, 24px);
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            background-color: var(--bg-color);
+        }
+
+        .square::before {
+            content: attr(value);
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            padding-top: clamp(1px, 0.5cqi, 4px);
+        }
+
+        .section-1 {
+            --bg-color: rgb(255 0 255 / 0.2);
+        }
+
+        .section-2 {
+            --bg-color: rgb(255 255 0 / 0.2);
+        }
+
+        .section-3 {
+            --bg-color: rgb(0 255 255 / 0.2);
+        }
+
+        .section-4 {
+            --bg-color: rgb(255 0 0 / 0.2);
+        }
+
+        .section-5 {
+            --bg-color: rgb(0 0 255 / 0.2);
+        }
+
+        .section-6 {
+            --bg-color: rgb(0 255 0 / 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image">
+        <img src="brain-teaser.jpg" alt="Brain Teaser" />
+
+        <div id="answer" class="hidden">
+            <div class="grid">
+                <div class="square section-1" value="3"></div>
+                <div class="square section-1" value="2"></div>
+                <div class="square section-1" value="1"></div>
+                <div class="square section-2 given"></div>
+                <div class="square section-2" value="5"></div>
+                <div class="square section-2" value="4"></div>
+                <div class="square section-1" value="6"></div>
+                <div class="square section-3 given"></div>
+                <div class="square section-1" value="5"></div>
+                <div class="square section-2" value="3"></div>
+                <div class="square section-4 given"></div>
+                <div class="square section-2" value="2"></div>
+                <div class="square section-1" value="4"></div>
+                <div class="square section-3" value="3"></div>
+                <div class="square section-3" value="6"></div>
+                <div class="square section-3" value="5"></div>
+                <div class="square section-4" value="2"></div>
+                <div class="square section-2" value="1"></div>
+                <div class="square section-5" value="5"></div>
+                <div class="square section-5" value="4"></div>
+                <div class="square section-5" value="3"></div>
+                <div class="square section-3 given"></div>
+                <div class="square section-4" value="1"></div>
+                <div class="square section-4" value="6"></div>
+                <div class="square section-5" value="1"></div>
+                <div class="square section-6 given"></div>
+                <div class="square section-6" value="2"></div>
+                <div class="square section-3" value="4"></div>
+                <div class="square section-6 given"></div>
+                <div class="square section-4" value="3"></div>
+                <div class="square section-5 given"></div>
+                <div class="square section-5" value="6"></div>
+                <div class="square section-6" value="4"></div>
+                <div class="square section-6" value="1"></div>
+                <div class="square section-6" value="3"></div>
+                <div class="square section-4" value="5"></div>
+            </div>
+        </div>
+        <a id="toggleAnswer" onclick="toggleAnswer()">Show Answer</a>
+    </div>
+</body>
+
+</html>
