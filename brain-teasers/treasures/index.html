@@ -8,8 +8,6 @@
     <title>Treasures</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <script>
         let answerVisible = false;
 
@@ -35,14 +33,6 @@
     </script>
 
     <style>
-        .material-symbols-outlined {
-            font-variation-settings:
-                'FILL' 0,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 48
-        }
-
         body {
             box-sizing: border-box;
         }
@@ -90,16 +80,14 @@
 
         .square {
             position: relative;
-            font-size: 26px;
-            font-family: Arial, Helvetica, sans-serif;
         }
 
-        .square::before {
+        .square::before,
+        .square::after {
             content: '';
             position: absolute;
             height: 100%;
             width: 100%;
-            background: var(--background-color);
         }
 
         @keyframes highlight {
@@ -109,8 +97,8 @@
             }
 
             50% {
-                background-color: rgb(155 255 255 / 0.3);
-                box-shadow: 0 0 4px 4px rgb(155 255 255 / 0.25);
+                background-color: rgb(155 255 255 / 0.4);
+                box-shadow: 0 0 4px 8px rgb(155 255 255 / 0.25);
             }
 
             100% {
@@ -119,19 +107,27 @@
             }
         }
 
-        .treasure {
-            animation-name: highlight;
-            animation-duration: 1000ms;
-            animation-timing-function: ease-out;
+        .treasure::before,
+        .treasure::after {
+            content: '\ead5';
+            font-family: "Material Symbols Outlined";
+            font-size: clamp(8px, 3.5cqi, 24px);
+            text-align: center;
             border-radius: 50%;
         }
 
         .treasure::before {
-            content: '\ead5';
-            font-family: "Material Symbols Outlined";
-            text-shadow: 0 0 2px rgb(0, 255, 255), 0 0 2px rgb(0, 255, 255), 0 0 2px rgb(255, 255, 255);
-            font-size: clamp(8px, 3.5cqi, 24px);
-            text-align: center;
+            font-variation-settings: 'FILL' 1;
+            color: rgb(0, 255, 255);
+        }
+
+        .treasure::after {
+            color: rgb(0, 0, 0);
+            animation-name: highlight;
+            animation-duration: 1500ms;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
         }
     </style>
 </head>
