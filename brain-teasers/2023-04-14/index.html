@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>April 14, 2023</title>
+    <script>
+        let answerVisible = false;
+
+        function toggleAnswer() {
+            if (answerVisible) {
+                hideAnswer();
+            } else {
+                showAnswer();
+            }
+        }
+
+        function hideAnswer() {
+            document.getElementById('answer').setAttribute('hidden', null);
+            document.getElementById('answers').setAttribute('hidden', null);
+            document.getElementById('toggleAnswer').innerText = 'Show Answer';
+            answerVisible = false;
+        }
+
+        function showAnswer() {
+            document.getElementById('answer').removeAttribute('hidden');
+            document.getElementById('answers').removeAttribute('hidden');
+            document.getElementById('toggleAnswer').innerText = 'Hide Answer';
+            answerVisible = true;
+        }
+    </script>
+
+    <style>
+        body {
+            box-sizing: border-box;
+            --border-width: 1px;
+            --border-color: black;
+        }
+
+        a {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .image {
+            position: relative;
+            --image-width: min(90vw, 600px);
+            width: var(--image-width);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        img {
+            height: auto;
+            width: var(--image-width);
+            filter: hue-rotate(170deg);
+        }
+
+        .grid {
+            position: absolute;
+            --rows: 6;
+            --columns: 6;
+            --grid-height: calc(var(--image-width) * 0.338);
+            --grid-width: calc(var(--image-width) * 0.339);
+            left: calc(var(--image-width) - var(--image-width) / 2.44);
+            top: calc(var(--image-width) - var(--image-width) / 1.099);
+            height: var(--grid-height);
+            width: var(--grid-width);
+            --square-height: calc(var(--grid-height) / var(--rows));
+            --square-width: calc(var(--grid-width) / var(--columns));
+            display: grid;
+            grid-template-columns: repeat(var(--columns), var(--square-width));
+            grid-template-rows: repeat(var(--rows), var(--square-height));
+            background: rgb(0 255 255 / .1);
+        }
+
+        [hidden]>* {
+            display: none;
+        }
+
+        .square {
+            position: relative;
+            font-size: clamp(6px, 2.5cqi, 18px);
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            align-self: last baseline;
+        }
+
+        .given {
+            /* font-weight: bold; */
+        }
+
+        .square::before,
+        .square::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        .section-1 {
+            --bg-color: rgb(255 0 255 / 0.2);
+        }
+
+        .section-2 {
+            --bg-color: rgb(0 255 0 / 0.2);
+        }
+
+        .section-3 {
+            --bg-color: rgb(0 255 255 / 0.2);
+        }
+
+        .section-4 {
+            --bg-color: rgb(255 0 0 / 0.2);
+        }
+
+        .section-5 {
+            --bg-color: rgb(0 0 255 / 0.2);
+        }
+
+        .bt {
+            border-top: solid var(--border-width) var(--border-color);
+        }
+
+        .bl {
+            border-left: solid var(--border-width) var(--border-color);
+        }
+
+        .br {
+            border-right: solid var(--border-width) var(--border-color);
+        }
+
+        .bb {
+            border-bottom: solid var(--border-width) var(--border-color);
+        }
+
+        #answers {
+            font-size: clamp(6px, 2.5cqi, 16px);
+            position: absolute;
+            left: calc(var(--image-width) - var(--image-width) / 3.10);
+            top: calc(var(--image-width) - var(--image-width) / 1.85);
+            column-gap: .8rem;
+            row-gap: .25rem;
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: repeat(7, auto);
+        }
+
+        .heading {
+            font-size: clamp(6px, 2.5cqi, 18px);
+            align-self: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image">
+        <img src="brain-teaser.jpg" />
+        <div id="answer" class="grid" hidden>
+            <div class="square">A</div>
+            <div class="square">C</div>
+            <div class="square">E</div>
+            <div class="square">H</div>
+            <div class="square">I</div>
+            <div class="square">R</div>
+            <div class="square">B</div>
+            <div class="square">C</div>
+            <div class="square">E</div>
+            <div class="square">I</div>
+            <div class="square">P</div>
+            <div class="square">S</div>
+            <div class="square">C</div>
+            <div class="square">E</div>
+            <div class="square">H</div>
+            <div class="square">O</div>
+            <div class="square">R</div>
+            <div class="square">T</div>
+            <div class="square">F</div>
+            <div class="square">I</div>
+            <div class="square">R</div>
+            <div class="square">S</div>
+            <div class="square">S</div>
+            <div class="square">T</div>
+            <div class="square">N</div>
+            <div class="square">O</div>
+            <div class="square">S</div>
+            <div class="square">S</div>
+            <div class="square">T</div>
+            <div class="square">U</div>
+            <div class="square">O</div>
+            <div class="square">R</div>
+            <div class="square">T</div>
+            <div class="square">T</div>
+            <div class="square">U</div>
+            <div class="square">Y</div>
+        </div>
+        <a id="toggleAnswer" onclick="toggleAnswer()">Show Answer</a>
+        <div id="answers" hidden>
+            <div class="heading">Across</div>
+            <div class="heading">Down</div>
+            <div><b>1</b> Archie</div>
+            <div><b>1</b> Confab</div>
+            <div><b>7</b> Biceps</div>
+            <div><b>2</b> Cicero</div>
+            <div><b>8</b> Hector</div>
+            <div><b>3</b> Esther</div>
+            <div><b>9</b> Firsts</div>
+            <div><b>4</b> Hoists</div>
+            <div><b>10</b> Snouts</div>
+            <div><b>5</b> Purist</div>
+            <div><b>11</b> Tryout</div>
+            <div><b>6</b> Trusty</div>
+        </div>
+    </div>
+</body>
+
+</html>
