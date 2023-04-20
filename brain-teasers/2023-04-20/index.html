@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>April 20, 2023</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script>
+        let answerVisible = false;
+
+        function toggleAnswer() {
+            if (answerVisible) {
+                hideAnswer();
+            } else {
+                showAnswer();
+            }
+        }
+
+        function hideAnswer() {
+            document.getElementById('answer').setAttribute('hidden', null);
+            document.getElementById('answers').setAttribute('hidden', null);
+            document.getElementById('toggleAnswer').innerText = 'Show Answer';
+            answerVisible = false;
+        }
+
+        function showAnswer() {
+            document.getElementById('answer').removeAttribute('hidden');
+            document.getElementById('answers').removeAttribute('hidden');
+            document.getElementById('toggleAnswer').innerText = 'Hide Answer';
+            answerVisible = true;
+        }
+    </script>
+
+    <style>
+        body {
+            box-sizing: border-box;
+            --border-width: 1px;
+            --border-color: black;
+        }
+
+        a {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .image {
+            position: relative;
+            --image-width: min(90vw, 600px);
+            width: var(--image-width);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        img {
+            height: auto;
+            width: var(--image-width);
+            filter: hue-rotate(60deg);
+        }
+
+        .grid {
+            position: absolute;
+            --rows: 6;
+            --columns: 7;
+            --grid-height: calc(var(--image-width) * 0.312);
+            --grid-width: calc(var(--image-width) * 0.362);
+            left: calc(var(--image-width) - var(--image-width) / 2.36);
+            top: calc(var(--image-width) - var(--image-width) / 1.112);
+            height: var(--grid-height);
+            width: var(--grid-width);
+            --square-height: calc(var(--grid-height) / var(--rows));
+            --square-width: calc(var(--grid-width) / var(--columns));
+            display: grid;
+            grid-template-columns: repeat(var(--columns), var(--square-width));
+            grid-template-rows: repeat(var(--rows), var(--square-height));
+            transform: rotate(0.25deg);
+        }
+
+        [hidden]>* {
+            display: none;
+        }
+
+        .square {
+            position: relative;
+            font-size: clamp(6px, 2.5cqi, 18px);
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            align-self: last baseline;
+        }
+
+        .given {
+            /* font-weight: bold; */
+        }
+
+        .square::before,
+        .square::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        .section-1 {
+            --bg-color: rgb(255 0 255 / 0.2);
+        }
+
+        .section-2 {
+            --bg-color: rgb(0 255 0 / 0.2);
+        }
+
+        .section-3 {
+            --bg-color: rgb(0 255 255 / 0.2);
+        }
+
+        .section-4 {
+            --bg-color: rgb(255 0 0 / 0.2);
+        }
+
+        .section-5 {
+            --bg-color: rgb(0 0 255 / 0.2);
+        }
+
+        .bt {
+            border-top: solid var(--border-width) var(--border-color);
+        }
+
+        .bl {
+            border-left: solid var(--border-width) var(--border-color);
+        }
+
+        .br {
+            border-right: solid var(--border-width) var(--border-color);
+        }
+
+        .bb {
+            border-bottom: solid var(--border-width) var(--border-color);
+        }
+
+        #answers {
+            font-size: clamp(11px, 2.5cqi, 18px);
+            position: absolute;
+            top: calc(var(--image-width) - var(--image-width) / 2.10);
+            --margin: clamp(16px, 2.5cqi, 28px);
+            margin-left: var(--margin);
+            margin-right: var(--margin);
+            display: block;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 1,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 48;
+            font-size: clamp(4px, 1.25cqi, 9px);
+        }
+
+        .heading {
+            align-self: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image">
+        <img src="brain-teaser.jpg" />
+        <div id="answer" class="grid" hidden>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square">U</div>
+            <div class="square">S</div>
+            <div class="square">E</div>
+            <div class="square">S</div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square">C</div>
+            <div class="square">R</div>
+            <div class="square">U</div>
+            <div class="square">X</div>
+            <div class="square">E</div>
+            <div class="square">S</div>
+            <div class="square">H</div>
+            <div class="square">A</div>
+            <div class="square">B</div>
+            <div class="square">I</div>
+            <div class="square">T</div>
+            <div class="square">A</div>
+            <div class="square">T</div>
+            <div class="square">A</div>
+            <div class="square">N</div>
+            <div class="square">A</div>
+            <div class="square">T</div>
+            <div class="square">O</div>
+            <div class="square">M</div>
+            <div class="square">Y</div>
+            <div class="square">S</div>
+            <div class="square">A</div>
+            <div class="square">N</div>
+            <div class="square">E</div>
+            <div class="square">L</div>
+            <div class="square">Y</div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square">L</div>
+            <div class="square">E</div>
+            <div class="square">S</div>
+            <div class="square">S</div>
+            <div class="square"></div>
+            <div class="square"></div>
+        </div>
+        <a id="toggleAnswer" onclick="toggleAnswer()">Show Answer</a>
+        <div id="answers" hidden>
+            <div>
+                <span class="heading">Answers: </span>
+                has <span class="material-symbols-outlined">circle</span>
+                uses <span class="material-symbols-outlined">circle</span>
+                canal <span class="material-symbols-outlined">circle</span>
+                urbane <span class="material-symbols-outlined">circle</span>
+                cruxes <span class="material-symbols-outlined">circle</span>
+                habitat <span class="material-symbols-outlined">circle</span>
+                suites <span class="material-symbols-outlined">circle</span>
+                extols <span class="material-symbols-outlined">circle</span>
+                anatomy <span class="material-symbols-outlined">circle</span>
+                seamy <span class="material-symbols-outlined">circle</span>
+                sanely <span class="material-symbols-outlined">circle</span>
+                less <span class="material-symbols-outlined">circle</span>
+                sty
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
