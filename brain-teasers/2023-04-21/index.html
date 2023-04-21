@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>April 21, 2023 - New Subdivision</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script>
+        let answerVisible = false;
+
+        function toggleAnswer() {
+            if (answerVisible) {
+                hideAnswer();
+            } else {
+                showAnswer();
+            }
+        }
+
+        function hideAnswer() {
+            document.getElementById('answer').setAttribute('hidden', null);
+            document.getElementById('toggleAnswer').innerText = 'Show Answer';
+            answerVisible = false;
+        }
+
+        function showAnswer() {
+            document.getElementById('answer').removeAttribute('hidden');
+            document.getElementById('toggleAnswer').innerText = 'Hide Answer';
+            answerVisible = true;
+        }
+    </script>
+
+    <style>
+        body {
+            box-sizing: border-box;
+            --border-width: 1px;
+            --border-color: black;
+        }
+
+        a {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .image {
+            position: relative;
+            --image-width: min(90vw, 600px);
+            width: var(--image-width);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        img {
+            height: auto;
+            width: var(--image-width);
+            filter: hue-rotate(120deg);
+        }
+
+        .grid {
+            position: absolute;
+            --rows: 8;
+            --columns: 10;
+            --grid-height: calc(var(--image-width) * 0.392);
+            --grid-width: calc(var(--image-width) * 0.485);
+            left: calc(var(--image-width) - var(--image-width) / 1.86);
+            top: calc(var(--image-width) - var(--image-width) / 1.185);
+            height: var(--grid-height);
+            width: var(--grid-width);
+            --square-height: calc(var(--grid-height) / var(--rows));
+            --square-width: calc(var(--grid-width) / var(--columns));
+            display: grid;
+            grid-template-columns: repeat(var(--columns), var(--square-width));
+            grid-template-rows: repeat(var(--rows), var(--square-height));
+            transform: rotate(0.25deg);
+            background: rgb(225 255 255);
+            border-top: solid 1px black;
+            border-left: solid 1px black;
+        }
+
+        [hidden] .square:not(.given)::before {
+            display: none;
+        }
+
+        .square {
+            position: relative;
+            font-size: clamp(6px, 2.5cqi, 22px);
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            padding-top: clamp(1px, 2.5cqi, 2px);
+            /* align-self: last baseline; */
+            border-right: solid 1px black;
+            border-bottom: solid 1px black;
+        }
+
+        .given {
+            /* font-weight: bold; */
+        }
+
+        .square::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-color);
+            z-index: -1;
+        }
+
+        .section-1 {
+            --bg-color: rgb(255 0 255 / 0.2);
+        }
+
+        .section-2 {
+            --bg-color: rgb(0 255 0 / 0.2);
+        }
+
+        .section-3 {
+            --bg-color: rgb(0 255 255);
+        }
+
+        .section-4 {
+            --bg-color: rgb(255 125 0);
+        }
+
+        .section-5 {
+            --bg-color: rgb(155 0 255);
+            color: white;
+        }
+
+        .section-6 {
+            --bg-color: rgb(255 255 0);
+        }
+
+        .section-7 {
+            --bg-color: rgb(62, 0, 206);
+            color: white;
+        }
+
+        .section-8 {
+            --bg-color: rgb(255 0 0);
+            color: white
+        }
+
+        .section-9 {
+            --bg-color: rgb(0 255 0);
+        }
+
+        .section-10 {
+            --bg-color: rgb(0 0 255);
+            color: white
+        }
+
+        .bt {
+            border-top: solid var(--border-width) var(--border-color);
+        }
+
+        .bl {
+            border-left: solid var(--border-width) var(--border-color);
+        }
+
+        .br {
+            border-right: solid var(--border-width) var(--border-color);
+        }
+
+        .bb {
+            border-bottom: solid var(--border-width) var(--border-color);
+        }
+
+        #answers {
+            font-size: clamp(11px, 2.5cqi, 18px);
+            position: absolute;
+            top: calc(var(--image-width) - var(--image-width) / 2.10);
+            --margin: clamp(16px, 2.5cqi, 28px);
+            margin-left: var(--margin);
+            margin-right: var(--margin);
+            display: block;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 1,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 48;
+            font-size: clamp(4px, 1.25cqi, 9px);
+        }
+
+        .heading {
+            align-self: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image">
+        <img src="brain-teaser.jpg" />
+        <div id="answer" class="grid" hidden>
+            <div class="square section-1 given">9</div>
+            <div class="square section-1"></div>
+            <div class="square section-1"></div>
+            <div class="square section-1"></div>
+            <div class="square section-1"></div>
+            <div class="square section-1"></div>
+            <div class="square section-1"></div>
+            <div class="square section-1"></div>
+            <div class="square section-1"></div>
+            <div class="square section-2 given">3</div>
+            <div class="square section-6"></div>
+            <div class="square section-7"></div>
+            <div class="square section-7"></div>
+            <div class="square section-3 given">6</div>
+            <div class="square section-3"></div>
+            <div class="square section-3"></div>
+            <div class="square section-3"></div>
+            <div class="square section-3"></div>
+            <div class="square section-3"></div>
+            <div class="square section-2"></div>
+            <div class="square section-6"></div>
+            <div class="square section-7"></div>
+            <div class="square section-7"></div>
+            <div class="square section-4"></div>
+            <div class="square section-4"></div>
+            <div class="square section-4 given">9</div>
+            <div class="square section-5 given">3</div>
+            <div class="square section-5"></div>
+            <div class="square section-5"></div>
+            <div class="square section-2"></div>
+            <div class="square section-6"></div>
+            <div class="square section-7"></div>
+            <div class="square section-7"></div>
+            <div class="square section-4"></div>
+            <div class="square section-4"></div>
+            <div class="square section-4"></div>
+            <div class="square section-8"></div>
+            <div class="square section-8"></div>
+            <div class="square section-8"></div>
+            <div class="square section-8"></div>
+            <div class="square section-6 given">4</div>
+            <div class="square section-7"></div>
+            <div class="square section-7 given">8</div>
+            <div class="square section-4"></div>
+            <div class="square section-4"></div>
+            <div class="square section-4"></div>
+            <div class="square section-8 given">8</div>
+            <div class="square section-8"></div>
+            <div class="square section-8"></div>
+            <div class="square section-8"></div>
+            <div class="square section-9"></div>
+            <div class="square section-9"></div>
+            <div class="square section-9"></div>
+            <div class="square section-9"></div>
+            <div class="square section-10"></div>
+            <div class="square section-10"></div>
+            <div class="square section-10"></div>
+            <div class="square section-10"></div>
+            <div class="square section-10"></div>
+            <div class="square section-10"></div>
+            <div class="square section-9"></div>
+            <div class="square section-9"></div>
+            <div class="square section-9"></div>
+            <div class="square section-9"></div>
+            <div class="square section-10"></div>
+            <div class="square section-10"></div>
+            <div class="square section-10"></div>
+            <div class="square section-10"></div>
+            <div class="square section-10"></div>
+            <div class="square section-10"></div>
+            <div class="square section-9 given">12</div>
+            <div class="square section-9"></div>
+            <div class="square section-9"></div>
+            <div class="square section-9"></div>
+            <div class="square section-10"></div>
+            <div class="square section-10"></div>
+            <div class="square section-10"></div>
+            <div class="square section-10"></div>
+            <div class="square section-10"></div>
+            <div class="square section-10 given">18</div>
+        </div>
+        <a id="toggleAnswer" onclick="toggleAnswer()">Show Answer</a>
+    </div>
+</body>
+
+</html>
