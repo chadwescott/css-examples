@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>May 25, 2023</title>
+    <script>
+        let answerVisible = false;
+
+        function toggleAnswer() {
+            if (answerVisible) {
+                hideAnswer();
+            } else {
+                showAnswer();
+            }
+        }
+
+        function hideAnswer() {
+            document.getElementById('answer').setAttribute('hidden', null);
+            document.getElementById('toggleAnswer').innerText = 'Show Answer';
+            answerVisible = false;
+        }
+
+        function showAnswer() {
+            document.getElementById('answer').removeAttribute('hidden');
+            document.getElementById('toggleAnswer').innerText = 'Hide Answer';
+            answerVisible = true;
+        }
+    </script>
+
+    <style>
+        body {
+            box-sizing: border-box;
+            --border-width: 1px;
+            --border-color: black;
+        }
+
+        a {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .image {
+            position: relative;
+            --image-width: min(90vw, 600px);
+            width: var(--image-width);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        img {
+            height: auto;
+            width: var(--image-width);
+            filter: hue-rotate(150deg);
+        }
+
+        .grid {
+            --border-color: rgb(150 150 150);
+            position: absolute;
+            --rows: 4;
+            --columns: 4;
+            --grid-height: calc(var(--image-width) * 0.260);
+            --grid-width: calc(var(--image-width) * 0.260);
+            left: calc(var(--image-width) - var(--image-width) / 3.06);
+            top: calc(var(--image-width) - var(--image-width) / 1.108);
+            height: var(--grid-height);
+            width: var(--grid-width);
+            --square-height: calc(var(--grid-height) / var(--rows));
+            --square-width: calc(var(--grid-width) / var(--columns));
+            display: grid;
+            grid-template-columns: repeat(var(--columns), var(--square-width));
+            grid-template-rows: repeat(var(--rows), var(--square-height));
+            background: rgb(255 255 255);
+            /* rotate: -0.5deg; */
+            border-top: solid 2px var(--border-color);
+            border-left: solid 2px var(--border-color);
+        }
+
+        [hidden] .square:not(.given)::before,
+        [hidden] .square:not(.given)::after {
+            display: none;
+        }
+
+        .square {
+            position: relative;
+            font-size: clamp(8px, 3.0cqi, 26px);
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            border-bottom: solid 2px var(--border-color);
+            border-right: solid 2px var(--border-color);
+        }
+
+        /* .square::after {
+            content: '';
+            position: absolute;
+            padding-top: clamp(1px, 1cqi, 4px);
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: none;
+            z-index: 2;
+        } */
+
+        .square::before {
+            content: attr(letter);
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            padding-top: 6px;
+        }
+
+        .given {
+            /* font-weight: bold; */
+        }
+
+        .section-1 {
+            --bg-color: rgb(255 0 255 / 0.2);
+        }
+
+        .section-2 {
+            --bg-color: rgb(0 255 0 / 0.2);
+        }
+
+        .section-3 {
+            --bg-color: rgb(0 255 255);
+        }
+
+        .section-4 {
+            --bg-color: rgb(255 125 0);
+        }
+
+        .section-5 {
+            --bg-color: rgb(155 0 255);
+            color: white;
+        }
+
+        .section-6 {
+            --bg-color: rgb(255 255 0);
+        }
+
+        .section-7 {
+            --bg-color: rgb(62, 0, 206);
+            color: white;
+        }
+
+        .section-8 {
+            --bg-color: rgb(255 0 0);
+            color: white
+        }
+
+        .section-9 {
+            --bg-color: rgb(0 255 0);
+        }
+
+        .section-10 {
+            --bg-color: rgb(0 0 255);
+            color: white
+        }
+
+        .bt {
+            border-top: solid var(--border-width) var(--border-color);
+        }
+
+        .bl {
+            border-left: solid var(--border-width) var(--border-color);
+        }
+
+        .br {
+            border-right: solid var(--border-width) var(--border-color);
+        }
+
+        .bb {
+            border-bottom: solid var(--border-width) var(--border-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image">
+        <img src="brain-teaser.jpg" />
+        <div id="answer" class="grid" hidden>
+            <div class="square" letter="S"></div>
+            <div class="square" letter="O"></div>
+            <div class="square" letter="M"></div>
+            <div class="square" letter="E"></div>
+            <div class="square" letter="O"></div>
+            <div class="square" letter="K"></div>
+            <div class="square" letter="A"></div>
+            <div class="square given" letter="Y"></div>
+            <div class="square" letter="B"></div>
+            <div class="square" letter="R"></div>
+            <div class="square" letter="I"></div>
+            <div class="square" letter="E"></div>
+            <div class="square" letter="S"></div>
+            <div class="square" letter="A"></div>
+            <div class="square" letter="N"></div>
+            <div class="square" letter="D"></div>
+        </div>
+        <a id="toggleAnswer" onclick="toggleAnswer()">Show Answer</a>
+    </div>
+</body>
+
+</html>
