@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>June 14, 2023 - Scoreboard</title>
+    <script>
+        let answerVisible = false;
+
+        function toggleAnswer() {
+            if (answerVisible) {
+                hideAnswer();
+            } else {
+                showAnswer();
+            }
+        }
+
+        function hideAnswer() {
+            document.getElementById('answer').setAttribute('hidden', null);
+            document.getElementById('answers').setAttribute('hidden', null);
+            document.getElementById('toggleAnswer').innerText = 'Show Answer';
+            answerVisible = false;
+        }
+
+        function showAnswer() {
+            document.getElementById('answer').removeAttribute('hidden');
+            document.getElementById('answers').removeAttribute('hidden');
+            document.getElementById('toggleAnswer').innerText = 'Hide Answer';
+            answerVisible = true;
+        }
+    </script>
+
+    <style>
+        body {
+            --border-width: 1px;
+            --border-color: black;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        a {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .image {
+            position: relative;
+            --image-width: min(90vw, 600px);
+            width: var(--image-width);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        img {
+            height: auto;
+            width: var(--image-width);
+            filter: hue-rotate(160deg);
+        }
+
+        .grid {
+            position: absolute;
+            --rows: 3;
+            --columns: 5;
+            --grid-height: calc(var(--image-width) * 0.210);
+            --grid-width: calc(var(--image-width) * 0.345);
+            left: calc(var(--image-width) - var(--image-width) / 1.333);
+            top: calc(var(--image-width) - var(--image-width) / 1.810);
+            height: var(--grid-height);
+            width: var(--grid-width);
+            --square-height: calc(var(--grid-height) / var(--rows));
+            --square-width: calc(var(--grid-width) / var(--columns));
+            display: grid;
+            grid-template-columns: repeat(var(--columns), var(--square-width));
+            grid-template-rows: repeat(var(--rows), var(--square-height));
+        }
+
+        [hidden]>* {
+            display: none;
+        }
+
+        .square {
+            position: relative;
+            font-size: clamp(6px, 3.0cqi, 20px);
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-weight: bold;
+            align-self: last center;
+        }
+
+        .given {
+            /* font-weight: bold; */
+        }
+
+        .square::before,
+        .square::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        .section-1 {
+            --bg-color: rgb(255 0 255 / 0.2);
+        }
+
+        .section-2 {
+            --bg-color: rgb(0 255 0 / 0.2);
+        }
+
+        .section-3 {
+            --bg-color: rgb(0 255 255 / 0.2);
+        }
+
+        .section-4 {
+            --bg-color: rgb(255 0 0 / 0.2);
+        }
+
+        .section-5 {
+            --bg-color: rgb(0 0 255 / 0.2);
+        }
+
+        .bt {
+            border-top: solid var(--border-width) var(--border-color);
+        }
+
+        .bl {
+            border-left: solid var(--border-width) var(--border-color);
+        }
+
+        .br {
+            border-right: solid var(--border-width) var(--border-color);
+        }
+
+        .bb {
+            border-bottom: solid var(--border-width) var(--border-color);
+        }
+
+        #answers {
+            font-size: clamp(8px, 3.0cqi, 20px);
+            font-weight: bold;
+            position: absolute;
+            left: calc(var(--image-width) - var(--image-width) / 4.40);
+            top: calc(var(--image-width) - var(--image-width) / 1.78);
+            row-gap: clamp(.4rem, 2.0cqi, .65rem);
+            display: grid;
+            grid-template-columns: repeat(1, auto);
+            grid-template-rows: repeat(3, auto);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image">
+        <img src="brain-teaser.jpg" />
+        <div id="answer" class="grid" hidden>
+            <div class="square">0</div>
+            <div class="square">1</div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square">6</div>
+            <div class="square"></div>
+            <div class="square">0</div>
+            <div class="square">0</div>
+            <div class="square"></div>
+            <div class="square">3</div>
+            <div class="square">0</div>
+            <div class="square">1</div>
+            <div class="square">1</div>
+            <div class="square"></div>
+            <div class="square">3</div>
+        </div>
+        <a id="toggleAnswer" onclick="toggleAnswer()">Show Answer</a>
+        <div id="answers" hidden>
+            <div>3 - 4</div>
+            <div>2 - 2</div>
+            <div>1 - 0</div>
+        </div>
+    </div>
+</body>
+
+</html>
