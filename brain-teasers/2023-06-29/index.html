@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>June 29, 2023 - Square Deal</title>
+    <script>
+        let answerVisible = false;
+
+        function toggleAnswer() {
+            if (answerVisible) {
+                hideAnswer();
+            } else {
+                showAnswer();
+            }
+        }
+
+        function hideAnswer() {
+            document.getElementById('answer').classList.add('hidden');
+            document.getElementById('toggleAnswer').innerText = 'Show Answer';
+            answerVisible = false;
+        }
+
+        function showAnswer() {
+            document.getElementById('answer').classList.remove('hidden');
+            document.getElementById('toggleAnswer').innerText = 'Hide Answer';
+            answerVisible = true;
+        }
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        a {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .image {
+            position: relative;
+            --image-width: min(90vw, 600px);
+            width: var(--image-width);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            --grid-height: calc(var(--image-width) * 0.38);
+            --grid-width: calc(var(--image-width) * 0.385);
+            --square-height: calc(var(--grid-height) / 6);
+            --square-width: calc(var(--grid-width) / 6);
+            --transparency: 30%;
+            --color-1: rgb(0 0 255 / var(--transparency));
+            --color-2: rgb(255 0 0 / var(--transparency));
+            --border-width: 2px;
+        }
+
+        img {
+            height: auto;
+            width: var(--image-width);
+            /* filter: hue-rotate(190deg); */
+        }
+
+        #answer {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        #toggleAnswer {
+            z-index: 1;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .grid {
+            position: absolute;
+            --rows: 5;
+            --columns: 5;
+            --grid-height: calc(var(--image-width) * 0.277);
+            --grid-width: calc(var(--image-width) * 0.277);
+            left: calc(var(--image-width) - var(--image-width) / 1.285);
+            top: calc(var(--image-width) - var(--image-width) / 1.455);
+            height: var(--grid-height);
+            width: var(--grid-width);
+            --square-height: calc(var(--grid-height) / var(--rows));
+            --square-width: calc(var(--grid-width) / var(--columns));
+            display: grid;
+            grid-template-columns: repeat(var(--columns), var(--square-width));
+            grid-template-rows: repeat(var(--rows), var(--square-height));
+        }
+
+        .square {
+            position: relative;
+            font-size: clamp(4px, 4cqi, 26px);
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            background-color: var(--bg-color);
+        }
+
+        .square::before {
+            content: attr(value);
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            padding-top: clamp(1px, 0.5cqi, 3px);
+        }
+
+        .section-1 {
+            --bg-color: rgb(255 0 255 / 0.2);
+        }
+
+        .section-2 {
+            --bg-color: rgb(255 255 0 / 0.2);
+        }
+
+        .section-3 {
+            --bg-color: rgb(0 255 255 / 0.2);
+        }
+
+        .section-4 {
+            --bg-color: rgb(255 0 0 / 0.2);
+        }
+
+        .section-5 {
+            --bg-color: rgb(0 0 255 / 0.2);
+        }
+
+        .section-6 {
+            --bg-color: rgb(0 255 0 / 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image">
+        <img src="brain-teaser.jpg" alt="Brain Teaser" />
+
+        <div id="answer" class="hidden">
+            <div class="grid">
+                <div class="square" value=""></div>
+                <div class="square" value="H"></div>
+                <div class="square" value="E"></div>
+                <div class="square" value=""></div>
+                <div class="square" value="F"></div>
+                <div class="square" value=""></div>
+                <div class="square" value="I"></div>
+                <div class="square" value="X"></div>
+                <div class="square" value="I"></div>
+                <div class="square" value="E"></div>
+                <div class="square" value=""></div>
+                <div class="square" value=""></div>
+                <div class="square" value=""></div>
+                <div class="square" value=""></div>
+                <div class="square" value="E"></div>
+                <div class="square" value=""></div>
+                <div class="square" value=""></div>
+                <div class="square" value="E"></div>
+                <div class="square" value="E"></div>
+                <div class="square" value="D"></div>
+                <div class="square" value="M"></div>
+                <div class="square" value="O"></div>
+                <div class="square" value=""></div>
+                <div class="square" value="D"></div>
+                <div class="square" value=""></div>
+            </div>
+        </div>
+        <a id="toggleAnswer" onclick="toggleAnswer()">Show Answer</a>
+    </div>
+</body>
+
+</html>
